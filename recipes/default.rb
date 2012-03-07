@@ -33,7 +33,7 @@ bash "install cloudfoundry-router gems" do
   cwd  File.join(node[:cloudfoundry_common][:vcap][:install_path], "router")
   code "#{File.join(ruby_path, "bundle")} install --without=test --local"
   subscribes :run, resources(:git => node[:cloudfoundry_common][:vcap][:install_path])
-#  action :nothing
+  action :nothing
 end
 
 template File.join(node[:nginx][:dir], "sites-available", "router") do
