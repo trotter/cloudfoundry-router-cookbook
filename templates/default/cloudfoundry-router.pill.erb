@@ -1,0 +1,11 @@
+Bluepill.application("cloudfoundry-router") do |app|
+  app.process("cloudfoundry-router") do |process|
+    process.environment = { "PATH" => "<%= @path %>:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games" }
+    process.start_command      = "<%= @binary %> -c <%= @config_file %>"
+    process.pid_file           = "<%= @pid_file %>"
+    process.start_grace_time   = 120.seconds
+    process.stop_grace_time    = 120.seconds
+    process.restart_grace_time = 120.seconds
+    process.daemonize = true
+  end
+end
