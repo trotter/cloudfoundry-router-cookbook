@@ -9,7 +9,8 @@ default[:cloudfoundry_router][:access_log] = File.join(node[:cloudfoundry_common
 # Log level for the router.
 default[:cloudfoundry_router][:log_level] = "info"
 
-# Where to write the Router's logs.
+# Where to write the Router's logs. XXX (trotter): I'm not certain this
+# attribute actually works.
 default[:cloudfoundry_router][:log_file] = File.join(node[:cloudfoundry_common][:log_dir], "router.log")
 
 # Where to write the Router's pid.
