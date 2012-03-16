@@ -33,6 +33,4 @@ nginx_site "default" do
   enable false
 end
 
-cloudfoundry_component "router" do
-  pid_file node.cloudfoundry_router.pid_file
-end
+cloudfoundry_component "router"
