@@ -24,6 +24,7 @@ template File.join(node[:nginx][:dir], "sites-available", "router") do
   owner  "root"
   group  "root"
   mode   "0644"
+  notifies :restart, "service[nginx]"
 end
 
 nginx_site "router"

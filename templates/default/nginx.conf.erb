@@ -6,6 +6,8 @@ server {
     listen       *:80;
     server_name  _;
 
+    client_max_body_size <%= node[:cloudfoundry_router][:client_max_body_size] %>;
+
     access_log   <%= node[:cloudfoundry_router][:access_log] %> combined;
     server_name_in_redirect off;
 
