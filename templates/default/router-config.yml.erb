@@ -1,7 +1,7 @@
 # Unix domain socket for connection between nginx and router
 sock: <%= node[:cloudfoundry_router][:socket_file] %>
 
-mbus: nats://<%= node[:nats_server][:user] %>:<%= node[:nats_server][:password] %>@<%= node[:cloudfoundry_common][:nats_server][:host] %>:<%= node[:nats_server][:port] %>/
+mbus: nats://<%= node[:nats_server][:user] %>:<%= node[:nats_server][:password] %>@<%= node[:cloudfoundry_common][:nats_server][:host] %>:<%= node[:cloudfoundry_common][:nats_server][:port] %>/
 logging:
   level: <%= node[:cloudfoundry_router][:log_level] %>
   file: <%= node[:cloudfoundry_router][:log_file] %>
