@@ -9,6 +9,6 @@ version          "0.0.1"
   supports os
 end
 
-%w{ nginx cloudfoundry-common bluepill }.each do |cb|
+%w{ nginx cloudfoundry-common }.each do |cb|
   depends cb
 end
